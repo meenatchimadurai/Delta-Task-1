@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styleguide.css">
+    </head>
+    <body>
+            <header>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="page.html">MY GUIDE</a></li>
+                        </ul>
+                    </nav>
+                    
+                </header>
+                <section class="healthguru">
+                   <i> Health</i>
+                   <img src="images/logo.jpg" height="100" width="75px">
+                   <i>Guru</i>
+                   <hr>
+                    
+                </section> 
+                <section class="main">
+                    
+                    <div>
+                Please enter your Calorie Limit for the Day:<input type="number" id="limit" placeholder="Enter calorie limit"></input><br>
+                <button onclick="fun1()" class="button">Get my diet plan</button> 
+                 <h4 id="breakfast">How much Calorie should I have for breakfast?</h4>
+                <h4 id="lunch">How much Calorie should I have for lunch?</h4>
+                <h4 id="dinner">How much Calorie should I have for dinner?</h4>
+                You can always have 200 PLEASURE calories apart from your meals for hot or soft drinks.It is your wish to use it or not!
+                </div>
+                <div>
+                    <img src="images/perfect.jpg" height="300px" width="300px">
+                </div>
+                </section>
+                <section class="empty">
+                    hello
+                </section>
+
+                <section class="calculator">
+                    <div class="divcalculator">
+                        <h1>Breakfast</h1>
+                         Item name(optional)   : <input type="text" id="bconsumed" placeholder="Enter Item Name"><br>
+                         Grams consumed: <input type="number" id="bgrams" placeholder="Enter Number of grams consumed"><br>
+                         Nutritional value: <input type="number" id="bnvalue" placeholder="In Calories per gram">
+                         <h5 id="btotal">What is my total breakfast calories?</h5>
+                         <button onclick="breakfast()" class="button">Check</button>
+                         
+                    </div>
+                    <div class="divcalculator">
+                        <h1>Lunch</h1>
+                         Item name(optional)   : <input type="text" id="lconsumed" placeholder="Enter Item Name"><br>
+                         Grams consumed: <input type="number" id="lgrams" placeholder="Enter Number of grams consumed"><br>
+                         Nutritional value: <input type="number" id="lnvalue" placeholder=" In Calories per gram">
+                         <h5 id="ltotal">What is my total lunch calories?</h5>
+                         <button onclick="lunch()" class="button">Check</button>
+                         
+                    </div>
+                    <div class="divcalculator">
+                        <h1>Dinner</h1>
+                         Item name(optional)   : <input type="text" id="dconsumed" placeholder="Enter Item Name"><br>
+                          Grams consumed: <input type="number" id="dgrams" placeholder="Enter Number of grams consumed"><br>
+                         Nutritional value: <input type="number" id="dnvalue" placeholder=" In Calories per gram">
+                         <h5 id="dtotal">What is my total dinner calories?</h5>
+                         <button onclick="dinner()" class="button">Check</button>
+                         
+                    </div>
+
+
+                </section>
+    </body>
+    <script>
+        console.log(localStorage.getItem("ucalorie"));
+        
+        
+        
+        function fun1(){
+           var x = document.getElementById("limit").value;
+          y = x-200;
+            b = y*0.35;
+            l = y*0.35;
+            d = y*0.3;
+            document.getElementById("breakfast").innerHTML=("My breakfast should be of "+b+"calories");
+            document.getElementById("lunch").innerHTML=("My breakfast should be of "+l+"calories");
+            document.getElementById("dinner").innerHTML=("My breakfast should be of "+d+"calories");
+        }
+        
+
+        function breakfast(){
+            var grams = document.getElementById("bgrams").value;
+            var n = document.getElementById("bnvalue").value;
+            bl = grams*n;
+            if(bl>b){
+                alert("!!You have crossed the Calorie limit of your breakfast!!");
+            }
+            else if(bl< (b/2)){
+                alert("You have had only very little!take care!");
+            }
+            else{
+                alert("Yay!! You have had a perfect breakfast!Cool!");
+            }
+            document.getElementById("btotal").innerHTML=("Total breakfast calories"+bl);
+        }
+        function lunch(){
+            var grams = document.getElementById("lgrams").value;
+            var n = document.getElementById("lnvalue").value;
+             ll = grams*n;
+            if(ll>l){
+                alert("!!You have crossed the Calorie limit of your lunch!!");
+            }
+            else if(ll< (l/2)){
+                alert("You have had only very little!take care!");
+            }
+            else{
+                alert("Yay!! You have had a perfect lunch!Cool!");
+            }
+            document.getElementById("ltotal").innerHTML=("Total lunch calories"+ll);
+        }
+
+        function dinner(){
+            var grams = document.getElementById("dgrams").value;
+            var n = document.getElementById("dnvalue").value;
+             dl = grams*n;
+            if(dl>d){
+                alert("!!You have crossed the Calorie limit of your dinner!!");
+            }
+            else if(dl< (d/2)){
+                alert("You have had only very little!take care!");
+            }
+            else{
+                alert("Yay!! You have had a perfect dinner!Cool!");
+            }
+            document.getElementById("dtotal").innerHTML=("Total dinner calories"+dl);
+        if((bl+ll+dl)>y)
+        {
+            alert("you have exceeded the number of calories");
+
+        }
+        else{
+            alert("You have kept your intake within limits today !Keep it up!");
+        }
+      
+    }
+
+    </script>
+</html>

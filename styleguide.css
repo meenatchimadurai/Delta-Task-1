@@ -1,0 +1,87 @@
+body{
+    background-image: url("images/bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
+
+}
+header{
+    color: white;
+    text-align: right;
+    padding : 20px;
+    font-size: 15px;
+}
+.healthguru{
+    text-align: center;
+    color:white;
+    font-size: 90px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none; 
+    color: white;
+    
+}
+
+li{
+    
+        display: inline-block;
+        margin-right: 20px;  
+}
+img{
+    border-radius: 50%;
+}
+hr{
+    background-color:rgb(100, 36, 219);
+    height :1px;
+    
+}
+
+.button{
+    background-color:rgb(245, 52, 165);
+    border:none;
+    color:white;
+    padding:15px 15px;
+}
+.main{
+    font-family: Georgia; 
+    font-size: 20px;
+    text-align: left;
+    margin-left: 50px;
+    line-height: 30px;
+    color:rgba(243, 8, 8, 0.726);
+    display: flex;
+    flex-direction: row;
+    
+}
+
+div{
+    margin:auto;
+    
+    
+}
+
+
+.empty{
+    color: rgb(131, 226, 131);
+    height: 50px;
+}
+.calculator{
+    font-family: Georgia; 
+    font-size: 20px;
+    text-align: center;
+    margin-left: 50px;
+    line-height: 30px;
+    color:rgb(100, 36, 219);
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.divcalculator{
+    margin: auto;
+    border: 2px solid white;
+}
+
